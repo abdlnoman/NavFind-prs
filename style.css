@@ -1,0 +1,65 @@
+:root {
+    --primary: #2563eb;
+    --secondary: #1e40af;
+    --accent: #3b82f6;
+    --dark: #1f2937;
+    --light: #f8fafc;
+  }
+  
+  .map-container {
+    background: linear-gradient(135deg, #dbeafe 0%, #93c5fd 100%);
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .route-animation {
+    position: absolute;
+    background-color: var(--accent);
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    filter: drop-shadow(0 0 4px var(--accent));
+  }
+  
+  .location-marker {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    border-radius: 50% 50% 50% 0;
+    background: #dc2626;
+    transform: rotate(-45deg);
+    filter: drop-shadow(0 0 6px rgba(220, 38, 38, 0.6));
+  }
+  .location-marker::after {
+    content: '';
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    width: 50%;
+    height: 50%;
+    background: white;
+    border-radius: 50%;
+  }
+  
+  .traffic-incident {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.3));
+  }
+  
+  /* Route animation */
+  @keyframes routePulse {
+    0% { transform: scale(1); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: scale(2); opacity: 0; }
+  }
+  .animate-route {
+    animation: routePulse 2s infinite;
+  }
+  
